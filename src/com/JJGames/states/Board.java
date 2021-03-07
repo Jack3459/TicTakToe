@@ -42,7 +42,7 @@ public class Board {
   }
 
 
-  //Upadte - Input - Render
+  //Update - Input - Render
 
   public void Update() {
 
