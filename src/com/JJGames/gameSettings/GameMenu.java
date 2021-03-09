@@ -6,7 +6,7 @@ public class GameMenu {
 
   private final int PLAY = 0;
   private final int PLAYERS = 1;
-  private final int SETTINGS = 2;
+  private final int HOW_TO = 2;
   private final int EXIT = 3;
 
   public static Players players = new Players();
@@ -37,10 +37,10 @@ public class GameMenu {
       }
       option = scanner.nextInt();
 
-      if (option < 0 || option > 3) {
+      if (option < PLAY || option > EXIT) {
         System.out.println("input only 0, 1, 2 or 3");
       }
-    } while (option > 3 || option < 0);
+    } while (option > EXIT || option < PLAY);
     scanner.nextLine();
 
     return option;
@@ -50,7 +50,7 @@ public class GameMenu {
     System.out.println(
         "\t 0. Play\n" +
             "\t 1. Players\n" +
-            "\t 2. Settings\n" +
+            "\t 2. How to play\n" +
             "\t 3. Exit\n"
     );
   }
@@ -67,8 +67,8 @@ public class GameMenu {
       case PLAYERS:
         callPlayer();
         break;
-      case SETTINGS:
-        callSettings();
+      case HOW_TO:
+        callHowTo();
         break;
       case EXIT:
         callExit();
@@ -104,8 +104,8 @@ public class GameMenu {
     option();
   }
 
-  public void callSettings() {
-    System.out.println("No settings yet");
+  public void callHowTo() {
+    HowTo.howToPlay();
     option();
   }
 
